@@ -1,0 +1,40 @@
+.checkboxContent {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+  
+    & div {
+      background: url(../assets/checkbox-default.svg);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    & input,
+    & input:focus,
+    & input:hover {
+      all: unset;
+      position: absolute;
+      inset: 0;
+      outline: inherit;
+    }
+  
+    &:hover,
+    &:focus-within {
+      & > div {
+        background: url(../assets/checkbox-hover.svg);
+      }
+  
+      cursor: pointer;
+    }
+  
+    &:has(:checked) {
+      & > div {
+        background: url(../assets/checkbox-checked.svg);
+      }
+      &:hover {
+        background: url(../assets/checkbox-checked-hover.svg);
+      }
+    }
+  }
